@@ -10,7 +10,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<DataService>();
-builder.Services.AddScoped<ICurrentTenant, CurrentTenant>();
+builder.Services.AddSingleton<ICurrentTenant, CurrentTenant>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
